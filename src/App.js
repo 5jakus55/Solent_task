@@ -9,15 +9,15 @@ import PrivateRoute from "./PrivateRoute";
 
 const App = () => {
   return (
-    <AuthDetails>
+    
       <Router>
         <div>
           <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/Login" component={Login} />
+          <Route exact path="/SignUp" component={SignUp} />
         </div>
       </Router>
-    </AuthDetails>
+    
   );
 };
 

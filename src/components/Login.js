@@ -1,6 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
-import { withRouter, Redirect } from "react-router";
 import styled from "styled-components";
 import { auth } from "../firebase/base.js";
 import SLogo from "../assets/Sc.png";
@@ -213,4 +212,4 @@ const Text11 = styled.div`
 
 
 
-export default withRouter(Login);
+export default Login;
