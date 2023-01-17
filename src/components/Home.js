@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import app from "../firebase/base.js";
+import { auth }  from "../firebase/base.js";
 
 const Home = () => {
   const CreatetaskbuttonFunction = (e, name) => {
@@ -35,7 +35,7 @@ const Home = () => {
         You don’t have any new tasks <br />
         at the moment{" "}
       </Paragraph1>
-      <button onClick={() => app.auth().signOut()}>Sign out</button>
+      <button onClick={() => auth.auth().signOut()}>Sign out</button>
       <Createtaskbutton
         onClick={(e) => CreatetaskbuttonFunction(e, "Createtaskbutton")}
       />

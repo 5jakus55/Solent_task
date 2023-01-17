@@ -1,32 +1,42 @@
-import React, { useCallback } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from "react";
 import { withRouter } from "react-router";
-import app from "../firebase/base";
+import styled from "styled-components";
+import { auth }  from "../firebase/base";
+import SLogo from "../assets/Sc.png";
+import MenuBar from "../assets/Menu.svg";
+import CreateTask from "../assets/Createtaskbutton.svg";
+import SearchImage from "../assets/Searchamico.svg";
+import "@fontsource/montserrat";
 
-const SignUp = ({ history }) => {
-  const handleSignUp = useCallback(async event => {
-    event.preventDefault();
-    const { email, password } = event.target.elements;
-    try {
-      await app
-        .auth()
-        .createUserWithEmailAndPassword(email.value, password.value);
-      history.push("/");
-    } catch (error) {
-      alert(error);
-    }
-  }, [history]);
+const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const signUp = (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
       <h1>Sign up</h1>
-      <form onSubmit={handleSignUp}>
+      <form onSubmit={signUp}>
         <label>
           Email
-          <input name="email" type="email" placeholder="Email" />
+          <input type="email" placeholder="Email" value={email}
+          onChange={(e) => setEmail(e.target.value)}/>
         </label>
         <label>
           Password
-          <input name="password" type="password" placeholder="Password" />
+          <input type="password" placeholder="Password" value={password}
+          onChange={(e) => setPassword(e.target.value)}/>
         </label>
         <button type="submit">Sign Up</button>
       </form>

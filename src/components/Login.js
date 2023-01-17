@@ -1,33 +1,25 @@
-import React, { useCallback, useContext } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from "react";
 import { withRouter, Redirect } from "react-router";
 import styled from "styled-components";
-import app from "../firebase/base.js";
-import { AuthContext } from "../firebase/Auth.js";
+import { auth } from "../firebase/base.js";
 import SLogo from "../assets/Sc.png";
 import "@fontsource/montserrat";
 
-const Login = ({ history }) => {
-  const handleLogin = useCallback(
-    async event => {
-      event.preventDefault();
-      const { email, password } = event.target.elements;
-      try {
-        await app
-          .auth()
-          .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/");
-      } catch (error) {
-        alert(error);
-      }
-    },
-    [history]
-  );
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const { currentUser } = useContext(AuthContext);
-
-  if (currentUser) {
-    return <Redirect to="/" />;
-  }
+  const signIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <LoginPage>   
@@ -35,18 +27,16 @@ const Login = ({ history }) => {
         <img src={SLogo} />
       </Sc>
       <Paragraph>
-          Welcome to Solentask <br />
+          Welcome to SolenTask <br />
           manager application
       </Paragraph>
       <Text1>Student Email</Text1>
-      <form onSubmit={handleLogin}>
-      <EmailInput name="email" 
-                         type="email" 
-                         placeholder="Email"/>  
+      <form onSubmit={signIn}>
+      <EmailInput type="email" placeholder="Email" value={email}
+          onChange={(e) => setEmail(e.target.value)}/> 
       <Text3>Password</Text3>
-      <PasswordInput name="password" 
-                     type="password" 
-                     placeholder="Password"/>
+      <PasswordInput type="password" placeholder="Password" value={password}
+          onChange={(e) => setPassword(e.target.value)}/>
 
       <LoginButton type="submit">Log in</LoginButton>
       

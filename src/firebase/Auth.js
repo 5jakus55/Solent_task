@@ -1,31 +1,45 @@
+
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { onAuthStateChanged, getAuth } from 'firebase/auth'
-import app from "./base.js";
+import { auth } from "./base";
 
-const auth = getAuth(app)
-
-export const AuthContext = React.createContext();
-
-export const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
-  const [pending, setPending] = useState(true);
+const AuthDetails = () => {
+  const [authUser, setAuthUser] = useState(null);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => { setCurrentUser(user)
-                                         setPending(false) });
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user);
+      } else {
+        setAuthUser(null);
+      }
+    });
+
+    return () => {
+      listen();
+    };
   }, []);
 
-  if(pending){
-    return <>Loading...</>
-  }
+  const userSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("sign out successful");
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
-    <AuthContext.Provider
-      value={{
-        currentUser
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
+    <div>
+      {authUser ? (
+        <>
+          <p>{`Signed In as ${authUser.email}`}</p>
+          <button onClick={userSignOut}>Sign Out</button>
+        </>
+      ) : (
+        <p>Signed Out</p>
+      )}
+    </div>
   );
 };
+
+export default AuthDetails;
