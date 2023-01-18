@@ -1,22 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import { auth }  from "../firebase/base.js";
+import MenuBar from "../assets/Menu.svg";
+import SLogo from "../assets/Sc.png";
+import SearchImage from "../assets/Searchamico.svg";
+import "@fontsource/montserrat";
 
 const Home = () => {
+  
   const CreatetaskbuttonFunction = (e, name) => {
     alert(`${name} was clicked`);
   };
   return (
     <Homepage>
-      <Menu src={`https://file.rendit.io/n/GyDU6u0bnIRV7eWlIfaQ.svg`} />
-      <Sc src={`https://file.rendit.io/n/vLcM1jvgm84Ve5guIZhQ.png`} />
-      <Title>Welcome back, James!</Title>
+      <Menu src={MenuBar} />
+      <Sc src={SLogo} />
+      <Title>Welcome back!</Title>
       <Text1>
         Manage your tasks in easy way!
         <br />
-        <Text2>
-          <br />
-        </Text2>
         <Paragraph>
           You can view your Uni tasks, create your own tasks, and use our
           PomodoTask timer to concentrate on specific task with break <br />
@@ -30,12 +31,11 @@ const Home = () => {
         <Text5> tasks to do!</Text5>
       </Text3>
       <Text6>New Tasks :</Text6>
-      <Searchamico src={`https://file.rendit.io/n/evwIlYnUz9OSTRzSk03u.svg`} />
+      <Searchamico src={SearchImage} />
       <Paragraph1>
         You don’t have any new tasks <br />
         at the moment{" "}
       </Paragraph1>
-      <button onClick={() => auth.auth().signOut()}>Sign out</button>
       <Createtaskbutton
         onClick={(e) => CreatetaskbuttonFunction(e, "Createtaskbutton")}
       />
@@ -56,6 +56,9 @@ const Homepage = styled.div`
   border-radius: 10px;
   background-color: #ffffff;
   overflow: hidden;
+  body {
+    font-family: "Montserrat";
+  }
 `;
 const Menu = styled.img`
   width: 21.5px;
@@ -77,7 +80,6 @@ const Title = styled.div`
   position: absolute;
   font-size: 24px;
   font-weight: 600;
-  font-family: Inter;
 `;
 const Text1 = styled.div`
   width: 349px;
@@ -87,19 +89,11 @@ const Text1 = styled.div`
   position: absolute;
   font-size: 20px;
   font-weight: 600;
-  font-family: Inter;
-`;
-const Text2 = styled.div`
-  display: contents;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: Inter;
 `;
 const Paragraph = styled.div`
   display: contents;
   font-size: 15px;
   font-weight: 600;
-  font-family: Inter;
 `;
 const ScarletFlexColumn = styled.div`
   width: 261px;
@@ -127,7 +121,6 @@ const ViewTasks = styled.div`
   position: absolute;
   font-size: 20px;
   font-weight: 600;
-  font-family: Inter;
   white-space: pre-wrap;
 `;
 const Text3 = styled.div`
@@ -138,7 +131,6 @@ const Text3 = styled.div`
   position: absolute;
   font-size: 16px;
   font-weight: 600;
-  font-family: Inter;
   white-space: pre-wrap;
 `;
 const Text4 = styled.div`
@@ -146,13 +138,11 @@ const Text4 = styled.div`
   color: #d80818;
   font-size: 16px;
   font-weight: 600;
-  font-family: Inter;
 `;
 const Text5 = styled.div`
   display: contents;
   font-size: 16px;
   font-weight: 600;
-  font-family: Inter;
   white-space: pre-wrap;
 `;
 const Text6 = styled.div`
@@ -163,7 +153,6 @@ const Text6 = styled.div`
   position: absolute;
   font-size: 22px;
   font-weight: 600;
-  font-family: Inter;
 `;
 const Searchamico = styled.img`
   width: 166px;
@@ -180,7 +169,6 @@ const Paragraph1 = styled.div`
   position: absolute;
   font-size: 16px;
   font-weight: 600;
-  font-family: Inter;
   text-align: center;
   white-space: pre-wrap;
 `;

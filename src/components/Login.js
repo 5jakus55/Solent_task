@@ -22,6 +22,7 @@ const Login = () => {
 
   return (
     <LoginPage>   
+      <form onSubmit={signIn}>
       <Sc>
         <img src={SLogo} />
       </Sc>
@@ -30,7 +31,6 @@ const Login = () => {
           manager application
       </Paragraph>
       <Text1>Student Email</Text1>
-      <form onSubmit={signIn}>
       <EmailInput type="email" placeholder="Email" value={email}
           onChange={(e) => setEmail(e.target.value)}/> 
       <Text3>Password</Text3>
@@ -40,12 +40,12 @@ const Login = () => {
       <LoginButton type="submit">Log in</LoginButton>
       
       <Text8>Forgotten password?</Text8>
-      <Text10>Don't have an account? Sign Up</Text10>
-        
+      <Text10>Don't have an account? Sign Up</Text10>       
       </form>   
       
     </LoginPage>
   );
+
 };
 
 const LoginPage = styled.div`
@@ -188,11 +188,12 @@ text-align: center;
 
 color: #D80818;
 `;
+
 const Text10 = styled.div`
 position: absolute;
-width: 245px;
+width: 280px;
 height: 19px;
-left: 72.5px;
+left: 57px;
 top: 773px;
 
 font-style: normal;
@@ -202,12 +203,6 @@ line-height: 19px;
 text-align: center;
 
 color: #000000;
-`;
-const Text11 = styled.div`
-  display: contents;
-  color: #d80818;
-  font-size: 16px;
-  font-weight: 600;
 `;
 
 

@@ -1,8 +1,10 @@
 
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { auth } from "./base";
 import Login from "../components/Login.js"
+import SignUp from "../components/SignUp.js"
 
 const AuthDetails = ({ children }) => {
   const [authUser, setAuthUser] = useState(null);
@@ -33,11 +35,17 @@ const AuthDetails = ({ children }) => {
       <div>
         {authUser ? (
           <>
-            <p>{`Signed In as ${authUser.email}`}</p>
-            <button onClick={userSignOut}>Sign Out</button>
-          </>
+          <p>{`Signed In as ${authUser.email}`}</p>
+          <button onClick={userSignOut}>Sign Out</button>
+          {children}
+        </>
         ) : (
-          <Login />
+        <Router>
+          <Switch>
+            <Route exact path="/signup" component={SignUp} />
+            <Route path="*" component={Login} />
+          </Switch>
+        </Router>
         )}
       </div>
     );
