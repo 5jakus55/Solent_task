@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import MenuBar from "../assets/Menu.svg";
 import SLogo from "../assets/Sc.png";
 import SearchImage from "../assets/Searchamico.svg";
 import "@fontsource/montserrat";

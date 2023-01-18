@@ -78,9 +78,9 @@ const Navigation = styled.nav`
   top: 0;
   right: 600px;
   z-index: 600;
-  width: ${(props) => (props.clicked ? "100%" : "80%")};
-  opacity: ${(props) => (props.clicked ? "1" : "0")};
-  transition: width 0.8s, opacity 0.8s;
+  width: ${(props) => (props.clicked ? "100%" : "60%")};
+  display: ${(props) => (props.clicked ? "block" : "none")};
+  transition: width 5s, opacity 0.8s;
 `;
 
 const List = styled.ul`
@@ -98,7 +98,7 @@ const ItemLink = styled(NavLink)`
   font-weight: 400;
   text-decoration: none;
   color: ${COLORS.primaryDark};
-  padding: 0.6rem 0.4rem;
+  padding: 0.8rem 0.4rem;
   background-image: linear-gradient(
     120deg,
     transparent 0%,
