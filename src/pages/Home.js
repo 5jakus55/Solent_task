@@ -12,7 +12,6 @@ const Home = () => {
   };
   return (
     <Homepage>
-      <Menu src={MenuBar} />
       <Sc src={SLogo} />
       <Title>Welcome back!</Title>
       <Text1>
@@ -60,16 +59,10 @@ const Homepage = styled.div`
     font-family: "Montserrat";
   }
 `;
-const Menu = styled.img`
-  width: 21.5px;
-  height: 19px;
-  left: 345px;
-  top: 38.5px;
-  position: absolute;
-`;
+
 const Sc = styled.img`
-  width: 85.4px;
-  height: 27px;
+width: 85.4px;
+height: 30.14px;
   position: relative;
 `;
 const Title = styled.div`
