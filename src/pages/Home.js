@@ -34,9 +34,10 @@ const Home = () => {
         You don’t have any new tasks <br />
         at the moment{" "}
       </Paragraph1>
+      <a href="/createtask"> 
       <Createtaskbutton
-        onClick={(e) => CreatetaskbuttonFunction(e, "Createtaskbutton")}
       />
+      </a>
     </Homepage>
   );
 };
