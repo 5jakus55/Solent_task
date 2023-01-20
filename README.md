@@ -2,7 +2,7 @@
 
 ### Name: Sona Jakubcinova
 ### Link to the [Hosted website](https://5jakus55.github.io/Solent_task/)
-### Link to the [Git Repository](https://github.com/5jakus55/Solent_task)
+### Link to the [Git Repository](https://github.com/5jakus55/Solent_task/tree/master)
 
 This is the second part of react js web application project for module Contemporary Web Applications (Solent University) 
 The purpose of this project was to help students with their everyday difficulties they might face during the time at University. Multiple surveys have been conducted in order to create a useful design of a SolenTask manager application, as it has been proven that students most struggle with the time management and tasks from tutors.
