@@ -40,7 +40,10 @@ const Login = () => {
       <LoginButton type="submit">Log in</LoginButton>
       
       <Text8>Forgotten password?</Text8>
-      <Text10>Don't have an account? Sign Up</Text10>       
+      <Text10>Don't have an account?  <a href="/signup"> 
+                                      <SignupButton>Sign Up</SignupButton>
+                                      </a>
+      </Text10>       
       </form>   
       
     </LoginPage>
@@ -169,6 +172,21 @@ cursor: pointer;
   background: #D80818;
   color: #fff;
 }
+`;
+
+const SignupButton = styled.button`
+background:none;
+border:none;
+margin:0;
+padding:0;
+
+color: #D80818;
+background: #FFFFFF;
+/* red */
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+cursor:pointer;
 `;
 
 const Text8 = styled.div`

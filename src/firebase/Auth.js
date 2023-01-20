@@ -7,14 +7,14 @@ import Login from "../components/Login.js"
 import SignUp from "../components/SignUp.js"
 
 const AuthDetails = ({ children }) => {
-  const [authUser, setAuthUser] = useState(null);
+  const [user, setuser] = useState(null);
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setAuthUser(user);
+        setuser(user);
       } else {
-        setAuthUser(null);
+        setuser(null);
       }
     });
 
@@ -33,9 +33,9 @@ const AuthDetails = ({ children }) => {
 
   return (
       <div>
-        {authUser ? (
+        {user ? (
           <>
-          <p>{`Signed In as ${authUser.email}`}</p>
+          <f5>{`Signed In as ${user.email}`}</f5>
           <button onClick={userSignOut}>Sign Out</button>
           {children}
         </>

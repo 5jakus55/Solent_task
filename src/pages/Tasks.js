@@ -3,9 +3,7 @@ import styled from "styled-components";
 import "@fontsource/montserrat";
 
 const Tasks = ({}) => {
-  const BackbuttonFunction = (e, name) => {
-    alert(`${name} was clicked`);
-  };
+
   const WhiteFlexRowFunction = (e, name) => {
     alert(`${name} was clicked`);
   };
@@ -18,7 +16,7 @@ const Tasks = ({}) => {
   return (
     <Taskspage>
       <Topbar>
-        <Backbutton onClick={(e) => BackbuttonFunction(e, "Backbutton")} />
+        <Backbutton/>
       </Topbar>
       <Tasks1>
         <Text4>UNI Tasks</Text4>
@@ -61,12 +59,12 @@ const Tasks = ({}) => {
         </Group1>
       </Calendar>
       <Sort_Filter>
-        <WhiteFlexRow onClick={(e) => WhiteFlexRowFunction(e, "WhiteFlexRow")}>
+        <WhiteFlexRow onClick={(e) => WhiteFlexRowFunction(e, "Filter Button")}>
           <Text19>Filter</Text19>
           <Image1 src={`https://file.rendit.io/n/8fRRLsxbsuNbNqf4HqDV.svg`} />
         </WhiteFlexRow>
         <WhiteFlexRow1
-          onClick={(e) => WhiteFlexRow1Function(e, "WhiteFlexRow1")}
+          onClick={(e) => WhiteFlexRow1Function(e, "Sort Button")}
         >
           <Text20>Sort</Text20>
           <Image2 src={`https://file.rendit.io/n/3GJ7Lhri7k1J6z3gNa1n.svg`} />
@@ -132,7 +130,10 @@ const Tasks = ({}) => {
           <Image7 src={`https://file.rendit.io/n/2trH0gYE5okbNSIWWJfj.svg`} />
         </Task4>
         <FlexColumn8>
-          <Createtaskbutton onClick={(e) => FlexColumn8Function(e, "Createtaskbutton")}/>
+      <a href="/createtask"> 
+      <Createtaskbutton
+      />
+      </a>
         </FlexColumn8>
       </Bottombar>
     </Taskspage>
@@ -230,7 +231,7 @@ const Topbar = styled.div`
   align-items: flex-start;
   margin: 0px 0px 19.7px 21.5px;
 `;
-const Backbutton = styled.button`
+const Backbutton = styled.div`
   width: 25px;
   height: 21px;
   padding: 0px;

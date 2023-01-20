@@ -6,9 +6,6 @@ import "@fontsource/montserrat";
 
 const Home = () => {
   
-  const CreatetaskbuttonFunction = (e, name) => {
-    alert(`${name} was clicked`);
-  };
   return (
     <Homepage>
       <Sc src={SLogo} />
@@ -34,10 +31,12 @@ const Home = () => {
         You don’t have any new tasks <br />
         at the moment{" "}
       </Paragraph1>
+      <CreateTask>
       <a href="/createtask"> 
       <Createtaskbutton
       />
       </a>
+      </CreateTask>
     </Homepage>
   );
 };
@@ -61,8 +60,8 @@ const Homepage = styled.div`
 `;
 
 const Sc = styled.img`
-width: 85.4px;
-height: 30.14px;
+width: 95.4px;
+height: 40.14px;
   position: relative;
 `;
 const Title = styled.div`
@@ -165,6 +164,14 @@ const Paragraph1 = styled.div`
   text-align: center;
   white-space: pre-wrap;
 `;
+
+const CreateTask = styled.div`
+position: relative;
+align-self: flex-end;
+padding: 0px;
+border-width: 0px;
+`;
+
 const Createtaskbutton = styled.button`
   width: 60px;
   height: 60px;

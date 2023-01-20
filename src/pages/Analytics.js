@@ -103,7 +103,7 @@ const Analyticspage = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 32.9px 21.9px 32.9px 20px;
+  padding: 55px 21.9px 32.9px 20px;
   border-radius: 10px;
   background-color: #ffffff;
   overflow: hidden;
@@ -121,8 +121,8 @@ const Group = styled.div`
   margin: 0px 0px 28.7px 0px;
 `;
 const Sc = styled.img`
-  width: 85.4px;
-  height: 30.1px;
+  width: 95.4px;
+  height: 40.1px;
 `;
 const Group1 = styled.div`
   width: 346px;
