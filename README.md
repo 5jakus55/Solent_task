@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# SolenTask application for COM623
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Name: Sona Jakubcinova
+### Link to the [Hosted website](https://5jakus55.github.io/Solent_task/)
+### Link to the [Git Repository](https://github.com/5jakus55/Solent_task)
 
-## Available Scripts
+This is the second part of react js web application project for module Contemporary Web Applications (Solent University) 
+The purpose of this project was to help students with their everyday difficulties they might face during the time at University. Multiple surveys have been conducted in order to create a useful design of a SolenTask manager application, as it has been proven that students most struggle with the time management and tasks from tutors.
 
-In the project directory, you can run:
+Therefore, a task manager application has been designed in Figma, and developed using ReactJS, Firebase, and Firestore.
+The application consists of the following pages:
+* Login page and Signup page - using Firebase authentication and store user details in Firebase
+* Home page - main welcome page 
+* Profile page - user details page 
+* Create task page - create a task form and store it in Firestore
+* Tasks page - tasks from tutors
+* Analytics page - insights from the progress and completition of the tasks
+* PomodoTimer page - a page using pomodoro timer to help students concentrate
+* SOL page - a page with a link to Solent Online Learning website 
 
-### `npm start`
+Multiple components have been created to add a functionality to the design, such as:
+* Button
+* Hamburger Menu
+* Login and Signup form
+* Timer 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Please use this login details to access the application content 
+### email - test22@gmail.com
+### password - password123
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Some parts of the code don't work in deployed version, such as:
+1. Create task button in Homepage and Create Task pages
+2. Sign Up page doesn't work properly - and therefore only login is available on deployed version
+3. Create task form is not finished as there have been issues passing the data into Firestore

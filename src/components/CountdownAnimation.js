@@ -11,7 +11,7 @@ const CountdownAnimation = ({key, timer, animate, children}) => {
         isPlaying={animate}
         duration={timer * 60}
         colors={[
-          ['#D80818', 0.66],
+          ['#D80818', 0.33],
           ['#D80818', 0.33],
           ['#D80818', 0.33],
         ]}
