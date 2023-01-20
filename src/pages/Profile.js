@@ -1,15 +1,17 @@
 import React from 'react';
-import AuthDetails from "../firebase/Auth";
+import styled from "styled-components";
+import "@fontsource/montserrat";
 
 function Profile() {
-  
-  const { user, userSignOut } = AuthDetails();
   return (
-    <div>
-        <h5>{`Signed In as ${user.email}`}</h5>
-        <button onClick={userSignOut}>Sign Out</button>
-      </div>
+   <H1>Profile</H1>
   );
 }
+
+const H1 = styled.h1`
+display:flex;
+margin-top:200px;
+margin-left:120px;
+`;
 
 export default Profile;

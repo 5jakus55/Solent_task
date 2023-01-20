@@ -144,6 +144,7 @@ const Taskspage = styled.div`
   height: 844px;
   display: flex;
   flex-direction: column;
+  margin-top:30px;
   justify-content: flex-end;
   align-items: flex-start;
   border-radius: 10px;

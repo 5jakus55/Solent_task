@@ -50,7 +50,7 @@ const Homepage = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 34.5px 21px 28px 21px;
+  padding: 55px 21px 28px 21px;
   border-radius: 10px;
   background-color: #ffffff;
   overflow: hidden;
@@ -60,15 +60,15 @@ const Homepage = styled.div`
 `;
 
 const Sc = styled.img`
-width: 95.4px;
-height: 40.14px;
+width: 105.4px;
+height: 50.14px;
   position: relative;
 `;
 const Title = styled.div`
   width: 346px;
   height: 29px;
   left: 21px;
-  top: 94px;
+  top: 115px;
   position: absolute;
   font-size: 24px;
   font-weight: 600;

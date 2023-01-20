@@ -46,7 +46,7 @@ const Sc = styled.img`
   width: 95.4px;
   height: 40.14px;
   position: relative;
-  margin-top:25px;
+  margin-top:55px;
   margin-left:15px;
 `;
 
